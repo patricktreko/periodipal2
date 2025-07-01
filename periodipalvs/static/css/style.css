@@ -1,0 +1,190 @@
+/* General Styles */
+body {
+    font-family: 'Comic Sans MS', 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #ffe0ec 0%, #f7f7fa 100%);
+    color: #222;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    color: #d72660;
+    margin-top: 0.5em;
+    font-family: 'Comic Sans MS', 'Segoe UI', Arial, sans-serif;
+}
+
+a {
+    color: #1e90ff;
+    text-decoration: none;
+    transition: color 0.2s;
+    font-weight: bold;
+}
+a:hover {
+    color: #d72660;
+}
+
+/* Welcome Mascot */
+.mascot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.mascot img {
+    width: 60px;
+    height: 60px;
+    margin-right: 1em;
+}
+.mascot-text {
+    font-size: 1.2em;
+    color: #a61b46;
+    font-weight: bold;
+}
+
+/* Lesson List */
+.lesson-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.lesson-card {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 16px rgba(215,38,96,0.10);
+    padding: 1.5rem;
+    width: 280px;
+    text-align: center;
+    transition: box-shadow 0.2s, transform 0.2s;
+    border: 3px solid #ffd6e0;
+    position: relative;
+}
+.lesson-card:hover {
+    box-shadow: 0 8px 24px rgba(215,38,96,0.18);
+    transform: scale(1.03);
+    border-color: #d72660;
+}
+.lesson-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    border-radius: 50%;
+    background: #ffe0ec;
+    border: 2px solid #ffd6e0;
+}
+
+.lesson-card h2 {
+    font-size: 1.3em;
+    margin: 0.5em 0 0.2em 0;
+}
+
+.lesson-card p {
+    font-size: 1em;
+    color: #555;
+}
+
+.lesson-card a {
+    display: inline-block;
+    margin-top: 1em;
+    background: #d72660;
+    color: #fff;
+    border-radius: 12px;
+    padding: 0.7em 1.5em;
+    font-size: 1.1em;
+    box-shadow: 0 2px 8px rgba(215,38,96,0.10);
+    transition: background 0.2s;
+}
+.lesson-card a:hover {
+    background: #a61b46;
+}
+
+/* Lesson Page */
+#activities {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.activity-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(215,38,96,0.10);
+    padding: 1.2rem;
+    border: 2px solid #ffd6e0;
+}
+
+.activity-card h3 {
+    font-size: 1.1em;
+    color: #d72660;
+}
+
+.activity-card button {
+    background: #d72660;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 0.7em 1.5em;
+    margin: 0.3em;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    font-family: inherit;
+}
+.activity-card button:hover {
+    background: #a61b46;
+    transform: scale(1.07);
+}
+
+/* Feedback */
+#feedback {
+    font-size: 1.2em;
+    margin-top: 1em;
+    font-weight: bold;
+}
+
+/* Mini-game */
+#gameCanvas {
+    border-radius: 20px;
+    border: 3px solid #ffd6e0;
+    background: #fff8fb;
+}
+
+/* Homepage lesson card images */
+.lesson-list-image {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    border-radius: 50%;
+    background: #ffe0ec;
+    border: 2px solid #ffd6e0;
+}
+
+/* Lesson page main image */
+.lesson-main-image {
+    display: block;
+    margin: 1em auto 1em auto;
+    max-width: 220px;
+    width: 90%;
+    height: auto;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px rgba(215,38,96,0.10);
+    background: #ffe0ec;
+    border: 2px solid #ffd6e0;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    .lesson-list {
+        flex-direction: column;
+        align-items: center;
+    }
+    .lesson-card {
+        width: 95%;
+    }
+}

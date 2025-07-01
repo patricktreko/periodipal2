@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PeriodiPal</title>
+    <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
+    <meta name="theme-color" content="#d72660">
+    <link rel="icon" href="/static/img/icon-192.png">
+    <link rel="apple-touch-icon" href="/static/img/icon-192.png">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- ...other head content... -->
+</head>
+<body>
+    <div class="mascot">
+        <img src="/static/img/icon-192.png" alt="Mascot">
+        <span class="mascot-text">Hi! I'm Peri the Pal! Let's learn about growing up together 🎉</span>
+    </div>
+    <h1>Welcome to Menstrual Hygiene Learning</h1>
+
+    <div style="text-align:center; margin-bottom:2em;">
+        <button id="spinBtn" style="background:#d72660; color:#fff; border:none; border-radius:16px; font-size:1.2em; padding:1em 2em; cursor:pointer; font-weight:bold; box-shadow:0 2px 8px #ffd6e0;">
+            🎲 Spin the Wheel for a Random Mini-Game!
+        </button>
+    </div>
+
+    <!-- Modal for showing the result -->
+    <div id="gameModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.5); align-items:center; justify-content:center; z-index:1000;">
+        <div style="background:#fff; border-radius:20px; padding:2em; text-align:center; max-width:90vw;">
+            <h2 id="gameTitle"></h2>
+            <p id="gameDesc"></p>
+            <a id="playGameBtn" href="#" style="display:inline-block; margin-top:1em; background:#d72660; color:#fff; border-radius:12px; padding:0.7em 1.5em; font-size:1.1em; text-decoration:none;">Play Now!</a>
+            <br><br>
+            <button onclick="closeModal()" style="margin-top:1em; background:#ffd6e0; color:#d72660; border:none; border-radius:10px; padding:0.5em 1.2em; font-size:1em; cursor:pointer;">Close</button>
+        </div>
+    </div>
+
+    <div class="lesson-list">
+        {% for lesson in lessons %}
+            <div class="lesson-card">
+                <img src="{{ lesson.image }}" alt="{{ lesson.title }}" class="lesson-list-image">
+                <h2>{{ lesson.title }}</h2>
+                <p>{{ lesson.description }}</p>
+                <a href="/lesson/{{ lesson.id }}">Start Lesson</a>
+            </div>
+        {% endfor %}
+    </div>
+    <script src="{{ url_for('static', filename='js/spinwheel.js') }}"></script>
+    <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/static/js/sw.js')
+      .then(reg => {
+        // Registration successful
+      })
+      .catch(err => {
+        // Registration failed
+      });
+  });
+}
+</script>
+</body>
+</html>
